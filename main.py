@@ -23,4 +23,4 @@ def calcular(operacion):
 ui.dark_mode()
 
 # Título con estilo
-ui.label('Calculadora de Gonza con NiceGUI') \
+ui.label('Calculadora de Gonza con NiceGUI') 
