@@ -1,19 +1,17 @@
 from nicegui import ui
 
-ui.label("Mi Calculadora")
-
-
+# Función para manejar las operaciones
 def calcular(operacion):
     try:
         num1 = float(input1.value)
         num2 = float(input2.value)
-        if operacion == 'suma':
+        if operacion == '+':
             resultado.set_text(f'Resultado: {num1 + num2}')
-        elif operacion == 'resta':
+        elif operacion == '-':
             resultado.set_text(f'Resultado: {num1 - num2}')
-        elif operacion == 'multiplicacion':
+        elif operacion == '*':
             resultado.set_text(f'Resultado: {num1 * num2}')
-        elif operacion == 'division':
+        elif operacion == '/':
             if num2 != 0:
                 resultado.set_text(f'Resultado: {num1 / num2}')
             else:
@@ -21,16 +19,8 @@ def calcular(operacion):
     except ValueError:
         resultado.set_text('Error: ingrese números válidos')
 
-ui.label('Calculadora con NiceGUI').style('font-size: 24px; font-weight: bold;')
+# Tema oscuro
+ui.dark_mode()
 
-input1 = ui.input('Número 1')
-input2 = ui.input('Número 2')
-
-ui.button('Sumar', on_click=lambda: calcular('suma'))
-ui.button('Restar', on_click=lambda: calcular('resta'))
-ui.button('Multiplicar', on_click=lambda: calcular('multiplicacion'))
-ui.button('Dividir', on_click=lambda: calcular('division'))
-
-resultado = ui.label('Resultado: ')
-
-ui.run()
+# Título con estilo
+ui.label('Calculadora de Gonza con NiceGUI') \
