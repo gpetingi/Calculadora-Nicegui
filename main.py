@@ -1,6 +1,7 @@
 from nicegui import ui
 
-# Función para manejar las operaciones
+resultado = ui.label('Resultado: 0').classes('text-2xl')
+
 def calcular(operacion):
     try:
         num1 = float(input1.value)
@@ -19,8 +20,18 @@ def calcular(operacion):
     except ValueError:
         resultado.set_text('Error: ingrese números válidos')
 
-# Tema oscuro
 ui.dark_mode()
 
-# Título con estilo
-ui.label('Calculadora de Gonza con NiceGUI') 
+ui.label('Calculadora de Gonza con NiceGUI').classes('text-3xl font-bold')
+
+input1 = ui.number(label='Primer número')
+input2 = ui.number(label='Segundo número')
+
+with ui.row():
+    ui.button('+', on_click=lambda: calcular('+'))
+    ui.button('-', on_click=lambda: calcular('-'))
+    ui.button('*', on_click=lambda: calcular('*'))
+    ui.button('/', on_click=lambda: calcular('/'))
+
+if __name__ in {"__main__", "__mp_main__"}:
+    ui.run()
