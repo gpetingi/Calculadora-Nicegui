@@ -1,6 +1,7 @@
 from nicegui import ui
 
 resultado = ui.label('Resultado: 0').classes('text-2xl')
+print("Bienvenidos a mi Calculadora")
 
 def calcular(operacion):
     try:
